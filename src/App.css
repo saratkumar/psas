@@ -1,3 +1,8 @@
+/* import '@fontsource/roboto/300.css'; */
+/* import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css'; */
+
 .App {
   text-align: center;
 }
@@ -35,4 +40,43 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.companyTitle {
+    font-size: 26px;
+}
+
+.body {
+  margin-top:68px;
+}
+
+.horizontal-panel {
+ 
+}
+
+.heading {
+    font-size: 25px !important;
+    text-transform: uppercase;
+    font-weight: bold !important;
+    color: #ea4730;
+    -webkit-text-stroke: 1.5px #ea4730;
+    letter-spacing: 2px !important;
+}
+
+.heading-reverse {
+    font-size: 25px !important;
+    text-transform: uppercase;
+    font-weight: bold !important;
+    color: #ea4730;
+    -webkit-text-stroke: 1.5px #ea4730;
+    letter-spacing: 2px !important;
+}
+
+.btn-theme {
+  background-color: black !important;
+}
+
+
+.theme-bg {
+  background: white !important;
 }
