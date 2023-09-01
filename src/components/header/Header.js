@@ -12,7 +12,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-import { MENUS, MORE_MENUS } from '../../constants/menu';
+import { MENUS, MORE_MENUS, SERVICE_MENUS } from '../../constants/menu';
 import HouseIcon from '@mui/icons-material/House';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import SupervisedUserCircleIcon from '@mui/icons-material/SupervisedUserCircle';
@@ -71,12 +71,12 @@ function ResponsiveAppBar() {
     <AppBar className="z-1 fixedTop" position="static" id="mainHeader" ref={stickyHeader}>
       <Container maxWidth="xl">
         <Toolbar >
-        <Box sx={{display: { xs: 'none', md: 'flex' }}} className="logo" ></Box>
+          {/* <Box sx={{display: { xs: 'none', md: 'flex' }}} className="logo" ></Box> */}
           {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
-          <Typography variant="h6" noWrap component="a" href="/" sx={{ mr: 2, display: { xs: 'none', md: 'flex' }, color: 'inherit',textDecoration: 'none', width: "100%"}}>
+          <Typography variant="h5" noWrap component="a" href="/" sx={{ mr: 2, display: { xs: 'none', md: 'flex' }, color: 'inherit', textDecoration: 'none', width: "100%", fontFamily: "Acme" }}>
             Pegasus Sports & Mental Wellbeing Academy
           </Typography>
-          
+
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton size="large" aria-label="account of current user" aria-controls="menu-appbar" aria-haspopup="true" onClick={handleOpenNavMenu} color="inherit">
@@ -84,26 +84,28 @@ function ResponsiveAppBar() {
             </IconButton>
 
             <Menu id="menu-appbar" anchorEl={anchorElNav}
-              anchorOrigin={{ vertical: 'bottom', horizontal: 'left',}}
+              anchorOrigin={{ vertical: 'bottom', horizontal: 'left', }}
               keepMounted
-              transformOrigin={{ vertical: 'top', horizontal: 'left',}}
+              transformOrigin={{ vertical: 'top', horizontal: 'left', }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{display: { xs: 'block', md: 'none' },}}
+              sx={{ display: { xs: 'block', md: 'none' }, }}
             >
-            {pages.map((page) => (
+              {pages.map((page) => (
                 <MenuItem key={page.id} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center"> <Link to={page.link}>{page.name}</Link></Typography>
                 </MenuItem>
               ))}
-
+              {SERVICE_MENUS.map(el => {
+                return (<Typography textAlign="center"><Link to={el.link}><MenuItem >{el.name}</MenuItem></Link></Typography>)
+              })}
               {MORE_MENUS.map(el => {
-                return(<Typography textAlign="center"><Link to={el.link}><MenuItem >{el.name}</MenuItem></Link></Typography>)
+                return (<Typography textAlign="center"><Link to={el.link}><MenuItem >{el.name}</MenuItem></Link></Typography>)
               })}
             </Menu>
           </Box>
           {/* <Box sx={{display: { xs: 'flex', md: 'none' }}} className="logo" ></Box> */}
-          <Typography variant="h5" noWrap component="a" href="" sx={{ mr: 2, display: { xs: 'flex', md: 'none' },flexGrow: 1, color: 'inherit', textDecoration: 'none', fontSize: "24px", fontWeight:"bold", letterSpacing: "4px"}}>
+          <Typography variant="h5" noWrap component="a" href="" sx={{ mr: 2, display: { xs: 'flex', md: 'none' }, flexGrow: 1, color: 'inherit', textDecoration: 'none', fontSize: "24px", fontWeight: "bold", letterSpacing: "4px" }}>
             P.S.A.S
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, width: "100%", justifyContent: "right" }} className="color-white">
@@ -114,13 +116,22 @@ function ResponsiveAppBar() {
             ))}
 
             <IconButton size="large" aria-label="account of current user" aria-controls="menu-appbar" aria-haspopup="true" onClick={handleMenu} color="inherit">
-                          <span style={{fontSize: "14px"}}> MORE </span><ExpandMoreIcon> </ExpandMoreIcon>
-                          </IconButton>
-                          <Menu id="menu-appbar" anchorEl={anchorEl} anchorOrigin={{ vertical: 'top', horizontal: 'right', }} keepMounted transformOrigin={{ vertical: 'top', horizontal: 'right', }} open={Boolean(anchorEl)} onClose={handleClose}>
-                            {MORE_MENUS.map(el => {
-                              return(<Link to={el.link}><MenuItem >{el.name}</MenuItem></Link>)
-                            })}
-                          </Menu>
+              <span style={{ fontSize: "14px" }}> SERVICES </span><ExpandMoreIcon> </ExpandMoreIcon>
+            </IconButton>
+            <Menu id="menu-appbar" anchorEl={anchorEl} anchorOrigin={{ vertical: 'top', horizontal: 'right', }} keepMounted transformOrigin={{ vertical: 'top', horizontal: 'right', }} open={Boolean(anchorEl)} onClose={handleClose}>
+              {SERVICE_MENUS.map(el => {
+                return (<Link to={el.link}><MenuItem >{el.name}</MenuItem></Link>)
+              })}
+            </Menu>
+
+            {/* <IconButton size="large" aria-label="account of current user" aria-controls="menu-appbar" aria-haspopup="true" onClick={handleMenu} color="inherit">
+              <span style={{ fontSize: "14px" }}> MORE </span><ExpandMoreIcon> </ExpandMoreIcon>
+            </IconButton>
+            <Menu id="menu-appbar" anchorEl={anchorEl} anchorOrigin={{ vertical: 'top', horizontal: 'right', }} keepMounted transformOrigin={{ vertical: 'top', horizontal: 'right', }} open={Boolean(anchorEl)} onClose={handleClose}>
+              {MORE_MENUS.map(el => {
+                return (<Link to={el.link}><MenuItem >{el.name}</MenuItem></Link>)
+              })}
+            </Menu> */}
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'flex' } }} className="color-white">
             <IconButton size="large" aria-label="account of current user" aria-controls="menu-appbar" aria-haspopup="true" color="inherit">
@@ -133,7 +144,7 @@ function ResponsiveAppBar() {
               <SupervisedUserCircleIcon />
             </IconButton>
           </Box>
-        </Toolbar>  
+        </Toolbar>
 
 
       </Container>

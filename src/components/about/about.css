@@ -1,0 +1,77 @@
+.logo-about {
+    width: 200px;
+    height: 200px;
+    border: 1px solid;
+    border-radius: 50%; 
+    margin : auto;
+    border: 10px solid orange
+}
+
+.about {
+    /* background-image: linear-gradient(195deg, rgba(66, 66, 74, 0.8), black),url(../../images/gallery/bg.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover; */
+    background-color: black;
+    color: #fff;
+    /* padding: 25px; */
+    /* text-align: left; */
+
+}
+
+.about-img-container {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    padding: 25px;
+}
+
+.about-img {
+    width: 250px;
+    height: 250px;
+    border: 1px solid white;
+    border-radius: 50%;
+    background-image: url(../../images/founder.png);
+    background-size: cover;
+}
+
+.about-img-container h4 {
+    display: flex;
+    margin-left: 10px;
+}
+
+.about h4 {
+    letter-spacing: 3px;
+    line-height: 35px;
+    margin:0px;
+}
+
+.about .box {
+    width: 50%;
+    text-align: left !important;
+    padding: 10px
+    /* height: 90vh !important */
+}
+
+.about img {
+    border-radius: 20px;
+    width: 100%;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.fs-20 {
+    font-size: 20px;
+}
+
+.content {
+    text-align: left;
+    margin-top: 50px;
+    padding: 5%
+}

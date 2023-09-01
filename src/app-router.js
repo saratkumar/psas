@@ -7,21 +7,14 @@ import {
   Link,
 } from "react-router-dom";
 import App from "./App";
+import About from "./components/about/about";
 import { Home } from "./components/home/Home";
+import Schedule from "./components/schedule/Schedule";
 import  Service  from "./components/service/Service";
 const router = createBrowserRouter([
   {
     element: <App />,
     children: [
-      {
-        path: "/about",
-        element: (
-          <div>
-            <h1>Hello World</h1>
-            <Link to="about">About Us</Link>
-          </div>
-        ),
-      },
       {
         path: "home",
         element: <Home />
@@ -32,7 +25,7 @@ const router = createBrowserRouter([
       },
       {
         path: "class-schedule",
-        element: (<div><h3>TESTClass</h3></div>)
+        element: <Schedule />
       },
       {
         path: "services",
@@ -48,6 +41,10 @@ const router = createBrowserRouter([
       }, {
         path: "contact-us",
         element: (<div><h3>Contact</h3></div>)
+      },
+      {
+        path: "about",
+        element: <About />
       }
     ]
   }

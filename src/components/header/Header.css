@@ -7,12 +7,13 @@
     z-index: 999;
     top:0;
     position: fixed !important;
-    background:  transparent !important;
+    /* background:  transparent !important; */
+    background-color: #000103 !important;
 }
 
 .fixedTop {
-    background: linear-gradient(45deg, #ea4730, black) !important;
-    color: black !important;
+    background: #000103 !important; /*linear-gradient(45deg, #ea4730, black) !important;*/
+    color: white !important;
 }
 
 .css-hip9hq-MuiPaper-root-MuiAppBar-root {
